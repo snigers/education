@@ -5,6 +5,7 @@
             "Lesson 23 (Сlass inheritance)",
             "Test"
     ];
+    
     ?>
 <!DOCTYPE html>
 <html lang="ru">

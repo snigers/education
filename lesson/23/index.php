@@ -1,10 +1,21 @@
+<?php
+	ini_set('error_reporting', E_ALL);
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	?>
 <?require_once "function.php"?>
+<?require_once "class/Logger/FileLoggerDebug0.php"?>
+<?require_once "class/Base/Child.php"?>
+<?require_once "class/Dumper.php"?>
+<?require_once "class/Container.php"?>
+<?require_once "class/Page/Cached/StaticPage.php"?>
 <?php
     $from = ["{TITLE}", "{BODY}"];
     $to = [
             "Lesson 23 (Сlass inheritance)",
             "Test"
     ];
+    
     
     ?>
 <!DOCTYPE html>
@@ -36,11 +47,32 @@
             $str1 = "Hello world!";
             $str2 = "Привет мир!";
             
-            echo "{$str1[2]}<br/>";
-            echo "{$str2[2]}<br/>";
+            
+//            $logger = new FileLoggerDebug0("test", "test.log");
+//            $logger->log("Обычное сообщение");
+//            $logger->debug("Отладочное сообщение");
+			Child::test();
+			pr("========================");
+			Dumper::print(new class {
+				public $title;
+				public function __construct()
+				{
+					$this->title = "Hello world";
+				}
+			});
+			pr("========================");
+			(new Container)->anonym()->print();
+			pr("========================");
 			
-			echo strlen($str2) . " байт <br/>";
-			echo mb_strlen($str2) . " байт <br/>";
+			$id = 3;
+			pr("test");
+			$page = new StaticPage($id);
+			pr("test333s");
+			$page->render();
+			echo $page->id($id);
+			pr("========================");
+			pr();
+			pr("========================");
             
 ?>
 	

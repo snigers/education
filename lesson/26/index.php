@@ -1,6 +1,9 @@
 <?require_once "function.php"?>
 <?require_once "namespace/PHP7.php"?>
 <?php
+//	ini_set('error_reporting', E_ALL);
+//	ini_set('display_errors', 1);
+//	ini_set('display_startup_errors', 1);
     $from = ["{TITLE}", "{BODY}"];
     $to = [
             "Lesson 26 (Except)",
@@ -37,7 +40,20 @@
             $str2 = "Привет мир!";
             
             
-            
+            pr("==============================");
+            $f = fopen("spoon.txt", "r");
+//            if (!$f) return;
+            pr("==============================");
+            set_error_handler("myErrorHandler", E_ALL);
+            filemtime("spoon");
+            pr("==============================");
+            pr("==============================");
+            pr("==============================");
+            pr("==============================");
+            pr("==============================");
+            pr("==============================");
+            pr("==============================");
+            pr("==============================");
    
    
             
